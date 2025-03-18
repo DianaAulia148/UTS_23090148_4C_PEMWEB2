@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Livewire\volt\volt;
 
 Route::get('/home', function () {
     return response('
@@ -14,7 +15,10 @@ Route::get('/home', function () {
 
 // Route untuk halaman produk
 Route::get('/products', function () {
-    return 'Daftar Produk';
+    return response('
+        <h1>INI HALAMAN PRODUK</h1>
+
+    ');
 });
 
 // Route untuk menampilkan detail produk
