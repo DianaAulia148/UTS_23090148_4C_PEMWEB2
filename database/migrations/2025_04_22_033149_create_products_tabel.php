@@ -19,11 +19,8 @@ return new class extends Migration
             $table->string('sku', 50)->unique();
             $table->decimal('price', 10,2)->default(0)->check('price >=0');
             $table->integer('stock')->default(0)->check('stock >=0');
-            $table->unsignedBigInteger('product_categoty_id')->nullable();
-            $table->foreign('product_category_id')
-                  ->references('id')->on('product_categgories')
-                  ->onDelete('set null')
-                  ->onUpdate('cascade');
+            $table->unsignedBigInteger('categories_id')->nullable();
+            
             $table->string('image_url', 255)->nullable();
             $table->boolean('is_active')->default(true);
             $table->timestamps();
